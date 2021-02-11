@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">TicTacToe</string>
+    <string name="tic_tac_toe">Tic . Tac . Toe</string>
+    <string name="btn_play">Play</string>
+    <string name="btn_about">About</string>
+    <string name="btn_exit">Exit</string>
+    <string name="about_txt">Drucker Laguerre \nFarid Taourirt \nPierre Paul Denaud \n\nGroupe 1</string>
+    <string name="commencer">Commencer</string>
+    <string name="board_dim_5x5">5 X 5</string>
+    <string name="board_dim_4x4">4 X 4</string>
+    <string name="board_dim_3x3">3 X 3</string>
+    <string name="lbl_choice_board">Quelle dimension?</string>
+    <string name="title_activity_test_back2">TestBackActivity2</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_choice_board1">ChoiceBoardActivity1</string>
+</resources>
