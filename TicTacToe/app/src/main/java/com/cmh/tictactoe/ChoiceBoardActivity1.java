@@ -72,6 +72,8 @@ public class ChoiceBoardActivity1 extends AppCompatActivity {
                         break;
                     case R.id.rdb5x5:
                         str = "Grille 5: ";
+                        Intent myIntent3 = new Intent(ChoiceBoardActivity1.this, game5x5Activity.class);
+                        ChoiceBoardActivity1.this.startActivity(myIntent3);
                         break;
                 }
 //                Toast.makeText(ChoiceBoardActivity1.this, str +radioChoiceBoardButton.getText() + " - " +selectedId, Toast.LENGTH_SHORT).show();
