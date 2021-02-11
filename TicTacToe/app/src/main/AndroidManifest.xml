@@ -17,6 +17,10 @@
             android:name=".game3x3Activity"
             android:label="@string/title_activity_choice_board1"
             android:theme="@style/Theme.TicTacToe.NoActionBar"></activity>
+        <activity
+            android:name=".game4x4Activity"
+            android:label="@string/title_activity_choice_board1"
+            android:theme="@style/Theme.TicTacToe.NoActionBar"></activity>
 
         <activity android:name=".MainActivity" />
         <activity android:name=".SplashScreen">

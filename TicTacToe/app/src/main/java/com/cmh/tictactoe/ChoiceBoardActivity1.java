@@ -67,6 +67,8 @@ public class ChoiceBoardActivity1 extends AppCompatActivity {
                         break;
                     case R.id.rdb4x4:
                         str = "Grille 4: ";
+                        Intent myIntent2 = new Intent(ChoiceBoardActivity1.this, game4x4Activity.class);
+                        ChoiceBoardActivity1.this.startActivity(myIntent2);
                         break;
                     case R.id.rdb5x5:
                         str = "Grille 5: ";

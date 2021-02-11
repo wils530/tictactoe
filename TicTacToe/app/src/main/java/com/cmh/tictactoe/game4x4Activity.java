@@ -18,8 +18,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.HashMap;
 
-public class game3x3Activity extends AppCompatActivity implements View.OnClickListener {
-    private Button[][] buttons = new Button[3][3];
+public class game4x4Activity extends AppCompatActivity implements View.OnClickListener {
+    private Button[][] buttons = new Button[4][4];
     SharedPreferences sharedPref;
     private boolean player1Turn = true;
     private int roundCount;
@@ -35,15 +35,15 @@ public class game3x3Activity extends AppCompatActivity implements View.OnClickLi
         player2Points = sharedPref.getInt("player2Score", 0);
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_3x3);
+        setContentView(R.layout.activity_4x4);
         textViewPlayer1 = findViewById(R.id.player1Score);
         textViewPlayer2 = findViewById(R.id.player2Score);
         playerTurn = findViewById(R.id.player_turn);
         textViewPlayer1.setText("Player 1: " + player1Points);
         textViewPlayer2.setText("Player 2: " + player2Points);
 
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
                 String buttonID = "button_" + i + j;
                 int resID = getResources().getIdentifier(buttonID, "id", getPackageName());
                 buttons[i][j] = findViewById(resID);
@@ -58,8 +58,8 @@ public class game3x3Activity extends AppCompatActivity implements View.OnClickLi
             @Override
             public void onClick(View v) {
 
-                Intent myIntent = new Intent(game3x3Activity.this, ChoiceBoardActivity1.class);
-                game3x3Activity.this.startActivity(myIntent);
+                Intent myIntent = new Intent(game4x4Activity.this, ChoiceBoardActivity1.class);
+                game4x4Activity.this.startActivity(myIntent);
             }
         });
 
@@ -91,13 +91,13 @@ public class game3x3Activity extends AppCompatActivity implements View.OnClickLi
         if (player1Turn) {
             ((Button) v).setText("O");
 
-            MediaPlayer player1Song = MediaPlayer.create(game3x3Activity.this, R.raw.player1sound);
+            MediaPlayer player1Song = MediaPlayer.create(game4x4Activity.this, R.raw.player1sound);
             player1Song.start();
 
             playerTurn.setText("Player 2");
         } else {
             ((Button) v).setText("X");
-            MediaPlayer player2Song = MediaPlayer.create(game3x3Activity.this, R.raw.player2sound);
+            MediaPlayer player2Song = MediaPlayer.create(game4x4Activity.this, R.raw.player2sound);
             player2Song.start();
             playerTurn.setText("Player 1");
         }
@@ -108,41 +108,45 @@ public class game3x3Activity extends AppCompatActivity implements View.OnClickLi
             } else {
                 player2Wins();
             }
-        } else if (roundCount == 9) {
+        } else if (roundCount == 16) {
             draw();
         } else {
             player1Turn = !player1Turn;
         }
     }
     private boolean checkForWin() {
-        String[][] field = new String[3][3];
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
+        String[][] field = new String[4][4];
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
                 field[i][j] = buttons[i][j].getText().toString();
             }
         }
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 4; i++) {
             if (field[i][0].equals(field[i][1])
                     && field[i][0].equals(field[i][2])
+                    && field[i][0].equals(field[i][3])
                     && !field[i][0].equals("")) {
                 return true;
             }
         }
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 4; i++) {
             if (field[0][i].equals(field[1][i])
                     && field[0][i].equals(field[2][i])
+                    && field[0][i].equals(field[3][i])
                     && !field[0][i].equals("")) {
                 return true;
             }
         }
         if (field[0][0].equals(field[1][1])
                 && field[0][0].equals(field[2][2])
+                && field[0][0].equals(field[3][3])
                 && !field[0][0].equals("")) {
             return true;
         }
-        if (field[0][2].equals(field[1][1])
-                && field[0][2].equals(field[2][0])
-                && !field[0][2].equals("")) {
+        if (field[0][3].equals(field[1][2])
+                && field[0][3].equals(field[2][1])
+                && field[0][3].equals(field[3][0])
+                && !field[0][3].equals("")) {
             return true;
         }
         return false;
@@ -173,8 +177,8 @@ public class game3x3Activity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void newGame() {
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
                 buttons[i][j].setText("");
             }
         }
