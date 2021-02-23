@@ -4,7 +4,7 @@
     <string name="btn_play">Play</string>
     <string name="btn_about">About</string>
     <string name="btn_exit">Exit</string>
-    <string name="about_txt">Drucker Laguerre \nFarid Taourirt \nPierre Paul Denaud \n\nGroupe 1</string>
+    <string name="about_txt">Drucker Laguerre \nFarid Taourirt \nPierre Paul Denaud \nManyl Telmat \n\nGroupe 1</string>
     <string name="commencer">Commencer</string>
     <string name="board_dim_5x5">5 X 5</string>
     <string name="board_dim_4x4">4 X 4</string>
